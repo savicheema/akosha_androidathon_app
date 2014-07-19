@@ -14,7 +14,7 @@ angular.module('starter.controllers', [])
 .controller('AccountCtrl', function($scope) {
 })*/
 
-.controller('LocationCtrl', function($scope,$cordovaGeolocation){
+.controller('LocationCtrl', function($scope, $cordovaGeolocation){
     $scope.title = "Geo-location";
     $scope.getLocation = function(){
         $cordovaGeolocation.getCurrentPosition().then(function(position){
