@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {
+/*.controller('DashCtrl', function($scope) {
 })
 
 .controller('FriendsCtrl', function($scope, Friends) {
@@ -12,4 +12,17 @@ angular.module('starter.controllers', [])
 })
 
 .controller('AccountCtrl', function($scope) {
+})*/
+
+.controller('LocationCtrl', function($scope,$cordovaGeolocation){
+    $scope.title = "Geo-location";
+    $scope.getLocation = function(){
+        $cordovaGeolocation.getCurrentPosition().then(function(position){
+            console.log(position);
+            $scope.location = position;
+        }, function(err){
+            $scope.error = "did not find location";
+            console.log(err);
+        });
+    };
 });
