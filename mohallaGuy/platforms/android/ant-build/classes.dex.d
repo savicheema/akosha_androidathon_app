@@ -1,4 +1,5 @@
 /home/chinmay/project/akosha_androidathon_app/mohallaGuy/platforms/android/ant-build/classes.dex : \
+/home/chinmay/project/akosha_androidathon_app/mohallaGuy/platforms/android/ant-build/classes/org/apache/cordova/splashscreen/SplashScreen.class \
 /home/chinmay/project/akosha_androidathon_app/mohallaGuy/platforms/android/ant-build/classes/org/apache/cordova/device/Device.class \
 /home/chinmay/project/akosha_androidathon_app/mohallaGuy/platforms/android/ant-build/classes/com/ionicframework/mohallaguy922513/R$attr.class \
 /home/chinmay/project/akosha_androidathon_app/mohallaGuy/platforms/android/ant-build/classes/com/ionicframework/mohallaguy922513/R$xml.class \
