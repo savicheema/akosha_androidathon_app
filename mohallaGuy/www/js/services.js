@@ -1,5 +1,48 @@
-angular.module('starter.services', []);
+angular.module('starter.services', [])
 
+.service('GeoLocation',function($resource, $cordovaGeolocation, $ionicPopup){
+    this.getCoordinates = function(){
+        $cordovaGeolocation.getCurrentPosition().then(function(position){
+            //Send it to API
+        }, function(err){
+            $ionicPopup.alert({
+                title: 'Sorry',
+                content: 'There was some error'
+            }).then(function(){
+                $state.go('services');
+            });
+        });
+    };
+})
+
+.factory('NetworkStatus',function($cordovaNetwork, $ionicPopup){
+    var netFactory = {};
+
+    netFactory.isOffline = function(){
+        return $cordovaNetwork.isOffline;
+    };
+
+    netFactory.isOnline = function(){
+        return $cordovaNetwork.isOnline;
+    };
+
+    netFactory.type = function(){
+        return $cordovaNetwork.getNetwork();
+    };
+})
+
+.service('Loading',function($ionicLoading, $timeout){
+    this.showLoading = function(){
+        $ionicLoading.show({
+            template: 'Loading...'
+        });
+    };   
+    this.stopLoading = function(){
+        $timeout(function(){
+            $ionicLoading.hide();
+        },600);
+    }; 
+});
 /**
  * A simple example service that returns some data.
  */

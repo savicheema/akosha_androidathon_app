@@ -14,9 +14,20 @@ angular.module('starter.controllers', [])
 .controller('AccountCtrl', function($scope) {
 })*/
 
-.controller('LocationCtrl', function($scope, $cordovaGeolocation){
+.controller('ListCtrl', function($scope, $cordovaGeolocation){
+    /*
+     *show list of all services provided, with the image
+     *and function to send in GET request the category chosen
+     *with the user coordinates
+     */
+    $scope.services = ['Plumber', 'Electrician', 'Mechanic'];
     $scope.title = "Geo-location";
-    $scope.getLocation = function(){
+
+    /*$scope.sendServiceWithCoordinates = function(){
+        // Call API
+    }*/
+    
+    /*$scope.getLocation = function(){
         $cordovaGeolocation.getCurrentPosition().then(function(position){
             console.log(position);
             $scope.location = position;
@@ -24,5 +35,9 @@ angular.module('starter.controllers', [])
             $scope.error = "did not find location";
             console.log(err);
         });
-    };
+    };*/
+})
+
+.controller('SelectCtrl', function($scope){
+    console.log("value");
 });

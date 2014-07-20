@@ -28,13 +28,51 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
+    .state('services', {
+        url: '/services',
+        controller: 'ListCtrl',
+        //abstract: true,
+        templateUrl: 'templates/service-list.html'
+    })
+    
+    .state('service', {
+        url: '/:service',
+        controller: 'SelectCtrl',
+        templateUrl: 'templates/service-men-list.html'
+    });
+
+   /* .state('home.list', {
+        url: '/home/list',
+        views: {
+            'home-list': {
+                templateUrl: 'templates/home-list.html',
+                controller: 'ListCtrl'
+            }
+        }
+    })
+
+    .state('main', {
+        url: '/main',
+        abstract: true,
+        templateUrl: 'templates/main.html'
+    })
+
+    .state('main.select', {
+        url: '/main/select',
+        views: {
+            'main-select': {
+                templateUrl: 'templates/main-select.html',
+                controller: 'SelectCtrl'
+            }
+        }
+    });*/
 
     // setup an abstract state for the tabs directive
-    .state('tab', {
+    /*.state('tab', {
       url: "/tab",
       abstract: true,
       templateUrl: "templates/tabs.html"
-    })
+    })*/
 
     // Each tab has its own nav history stack:
 
@@ -75,7 +113,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
           controller: 'AccountCtrl'
         }
       }
-    })*/
+    })
 
     .state('tab.geo-location', {
         url: '/geolocation',
@@ -85,10 +123,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
                 controller: 'LocationCtrl'
             }
         }
-    });
+    });*/
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/geolocation');
+  //$urlRouterProvider.otherwise('/services');
 
 });
 
